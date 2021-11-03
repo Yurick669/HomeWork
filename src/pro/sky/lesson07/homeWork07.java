@@ -12,8 +12,8 @@ public class homeWork07{
         device(1,2021);
         System.out.println("Дни доставки: " + distance(15));
         duplicate("idsaafs");
-        int[] revers1 = {1,2,3,4,5,6,7,8,9};
-        revers(revers1);
+        int[] whatToFlip = {1,2,3,4,5,6,7,8,9};
+        revers(whatToFlip);
 
 
     }
