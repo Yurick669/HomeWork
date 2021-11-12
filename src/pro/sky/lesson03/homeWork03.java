@@ -2,7 +2,9 @@ package pro.sky.lesson03;
 
 public class homeWork03 {
     public homeWork03() {
-    } public static void main(String[] args) {
+    }
+
+    public static void main(String[] args) {
 
         //Задание 1
         int clientOS = 0;
