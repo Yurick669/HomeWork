@@ -5,15 +5,14 @@ public class Employee {
     private final String employeeName;
     private int department;
     private int salary;
-    private int id;
-    private static int newId;
+    private final int id;
+    private static int counter;
 
     public Employee(String employeeName, int department, int salary) {
         this.employeeName = employeeName;
         this.department = department;
         this.salary = salary;
-        this.id = newId;
-        newId ++;
+        this.id = counter ++;
 
     }
 
@@ -41,9 +40,6 @@ public class Employee {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     @Override
     public String toString() {

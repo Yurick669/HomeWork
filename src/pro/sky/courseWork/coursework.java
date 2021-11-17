@@ -17,36 +17,40 @@ public class coursework {
         employee[8] = new Employee("Иванов Дмитрий Иванович", 9, 39320);
         employee[9] = new Employee("Иванов Игорь Иванович", 10, 85525);
 
+        printInfo();
+
+        int salarySum = getSalarySum();
+        System.out.println("Сумма затрат = " + salarySum + "руб.");
+
+        int minSalary = employeeMinSalary().getSalary();
+        System.out.println("Минимальная зарплата = " + minSalary + "руб. Сотрудник: " +  employeeMinSalary().getEmployeeName());
+
+        int maxSalary = employeeMaxSalary().getSalary();
+        System.out.println("Максимальная зарплата = " + maxSalary + "руб. Сотрудник: " + employeeMaxSalary().getEmployeeName());
+
+        float averageSalary = getAverageSalary();
+        System.out.println("Средняя зарплата = " + averageSalary + "руб.");
+
+        printName();
+
+
+    }
+
+    private static void printInfo() {
         for (Employee employeeName : employee) {
             if (employee != null) {
                 System.out.println(employeeName);
             }
         }
+    }
 
-        int salarySum = getSalarySum();
-        System.out.println("Сумма затрат = " + salarySum + "руб.");
-
-        int minSalary = getMinSalary().getSalary();
-        System.out.println("Минимальная зарплата = " + minSalary + "руб. Сотрудник: " +  getMinSalary().getEmployeeName());
-
-        int maxSalary = getMaxSalary().getSalary();
-        System.out.println("Максимальная зарплата = " + maxSalary + "руб. Сотрудник: " + getMaxSalary().getEmployeeName());
-
-        float averageSalary = getAverageSalary();
-        System.out.println("Средняя зарплата = " + averageSalary + "руб.");
-
+    private static void printName() {
         for (Employee employeeName : employee) {
             if (employee != null) {
                 System.out.println("ФИО: " + employeeName.getEmployeeName());
             }
         }
-
-
-
-
     }
-
-
 
 
     private static int getSalarySum() {
@@ -56,7 +60,7 @@ public class coursework {
         return salarySum;
     }
 
-    private static Employee getMinSalary() {
+    private static Employee employeeMinSalary () {
         float minSalary = employee[0].getSalary();
         Employee nameMinSalary = employee[0];
         for (int i = 0; i < employee.length; i++) {
@@ -68,7 +72,7 @@ public class coursework {
         return nameMinSalary;
     }
 
-    private static Employee getMaxSalary() {
+    private static Employee employeeMaxSalary() {
         float maxSalary = employee[0].getSalary();
         Employee nameMaxSalary = employee[0];
         for (int i = 0; i < employee.length; i++) {
@@ -79,6 +83,7 @@ public class coursework {
         }
         return nameMaxSalary;
     }
+
     private static float getAverageSalary() {
         float salarySum = getSalarySum();
         float averageSalary = salarySum / employee.length;
